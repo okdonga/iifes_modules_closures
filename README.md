@@ -1,7 +1,8 @@
 # IIFEs, Modules, Closures
 
-IIFEs and modules are the syntactical gymnastics we have to go through to get usefull OO stuff in JS
-  - private state, 
+These are the syntactical gymnastics we have to go through to get useful OO stuff in JS
+  - private state
+  - public API
   - encapsulation (global state is bad.  why???)
   - namespacing
 
