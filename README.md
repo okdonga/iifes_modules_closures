@@ -1,6 +1,6 @@
-# IIFEs, Modules, Closures
+# IIFEs, Closures, Modules
 
-These are the syntactical gymnastics we have to go through to get useful OO stuff in js:
+These are the syntactical gymnastics we have to go through to get useful OO stuff in js, such as
   - private state
   - public API
   - encapsulation (global state is bad.  why???)
