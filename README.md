@@ -13,8 +13,8 @@ These are the syntactical gymnastics we have to go through to get useful OO stuf
   - functions can be passed as params
   - functions can be returned as the result of expressions
   - variables can hold functions
-- functions are invoked with ()
-- anything wrapped in () becomes an expression
+- functions are invoked with `()`
+- anything wrapped in `()` becomes an expression
 
 ### Function declaration and invocation
 
