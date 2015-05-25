@@ -69,25 +69,44 @@ console.log(something);
 
 - In js, if we use the function keyword inside another function, we are creating a closure
 - The local variables in the inner function can remain accessible after returning from the outer function
+- A closure is a function having access to the parent scope, even after the parent function has closed
 - A closure is a special kind of object that combines two things: a function, and the environment in which that function was created
 - Environment consists of any local variables that were in-scope at the time that the closure was created
 
 ```javascript
-function greet(name){
-    var text = 'Hello ' + name; // local variable
-    return function(){ console.log(text); }
-}
+var returnData = (function() {
+  // only created once
+  var largeDataSetTakesForeverToGet = [1,2,3]; // this could be an ajax call
+  
+  return function() { 
+    console.log(largeDataSetTakesForeverToGet) 
+  };
+})();
 
-var printGreeting = greet("pocket gophers");
+// getting that same variable back each time
+returnData();
+returnData();
+returnData();
+```
 
-console.log(printGreeting.toString());
-printGreeting();
+- This internal state can be mutable, but only through API we provide
+
+```javascript
+var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;}
+})();
+
+add();
+add();
+add();
 ```
 
 #### Closure as function factory
 
 - We can initialize a closure with state
 - A closure with its own state is created for each function invocation
+- This is called currying
 
 ```javascript
 function messageAfter(seconds) {
