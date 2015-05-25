@@ -98,29 +98,13 @@ function messageAfter(seconds) {
 var messageAfter5Seconds = messageAfter(5);
 var messageAfter2Seconds = messageAfter(2);
 
-messageAfter5Seconds("pocket gophers));
-messageAfter2Seconds("pocket gophers));
+messageAfter5Seconds("pocket gophers");
+messageAfter2Seconds("pocket gophers");
 
 messageAfter(7)("pocket gophers");
 messageAfter(453764576)("pocket gophers");
 ```
 
-This can be very performant with a large data set
-
-```javascript
-var getData = (function () {
-  // Same large imaginary data set - only instantiated once
-  // Maybe the result of an expensive network call
-  var dataSet = [0, 1, 2]; 
-
-  // As long as this function exists, it has a reference to the private variable
-  return function () {
-    console.log(dataSet);
-  }
-}());
-
-getData();
-```
 
 ## JS Module Pattern
 
@@ -175,4 +159,4 @@ undefined
 - [MDN on closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [Currying and closures in JS](http://engineering.cerner.com/blog/closures-and-currying-in-javascript/)
 
-- [modules, module loaders, ES6 built](]https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules)
+- [modules, module loaders, ES6 built in modules](]https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules)
