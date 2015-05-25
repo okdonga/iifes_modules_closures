@@ -27,7 +27,7 @@ function someName() {
 ```javascript
 // function expression
 // (defines an anonymous function and assigns it to a var)
-var someName = (function () {
+var someName = (function() {
   //...
 });
 ```
@@ -42,7 +42,7 @@ someName();
 This is an IIFE
 
 ```javascript
-(function () {
+(function() {
   //...
 })();
 ```
@@ -56,7 +56,7 @@ This is an IIFE
 
 ```javascript
 var something = "external stuff";
-(function () {
+(function() {
   var something = "my internal stuff";
   //...
 })();
@@ -64,20 +64,35 @@ var something = "external stuff";
 console.log(something);
 ```
 
-- Binding important variable names for the scope of the IIFE
+Bind variables to specific names within the IIFE.  Compare the two examples below:
 
 ```javascript
-(function ($, window, document, undefined) {
-  // ...
-})(jQuery, window, document);
+function something(important_stuff) { 
+  console.log(important_stuff); 
+}
+
+> var important_stuff = "rilly important";
+> important_stuff
+"rilly important"
+
+> something(important_stuff)
+"rilly important"
+
+> important_stuff = "lulz wut"
+something(important_stuff)
+> "lulz wut"
 ```
 
-- Defensive semicolon
-
 ```javascript
-;(function () {
+var important_stuff = "rilly important";
+var something = (function(important_stuff) {
+  var something = "my internal stuff";
   //...
-})();
+})(important_stuff);
+
+
+// what will the following line log?
+console.log(something);
 ```
 
 ## Closures
@@ -102,6 +117,7 @@ printGreeting();
 Closure as function factory
 
 - you can initialize your closure with state
+- closure with its own state is created for each function invocation
 
 ```javascript
 function messageAfter(seconds) {
@@ -186,5 +202,8 @@ undefined
 ## Resources
 
 - [IIFEs](http://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
+
 - [MDN on closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
-- [Currying and closures](http://engineering.cerner.com/blog/closures-and-currying-in-javascript/)- [modules, module loaders, ES6 built in modules](]https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules)
+- [Currying and closures in JS](http://engineering.cerner.com/blog/closures-and-currying-in-javascript/)
+
+- [modules, module loaders, ES6 built](]https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules)
