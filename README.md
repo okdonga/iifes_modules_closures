@@ -5,7 +5,7 @@ IIFEs and modules are the syntactical gymnastics we have to go through to get us
   - encapsulation (global state is bad.  why???)
   - namespacing
 
-### Pertinent JS recap
+## Pertinent JS recap
 
 - js only has function scope
 - in js, functions are first order objects
@@ -37,7 +37,7 @@ var someName = (function () {
 someName();
 ```
 
-### IIFE (iffy)
+## IIFE (iffy)
 
 This is an IIFE
 
@@ -80,9 +80,9 @@ console.log(something);
 })();
 ```
 
-### Module
+## JS Module Pattern
 
-- We can use IIFEs to as building blocks for modules
+- We can use IIFEs as building blocks for modules
 - In addition to hiding internal state, modules also allow us to expose a public API and provide namespacing
 - This is a standard pattern for writing JS libraries
 
