@@ -126,13 +126,45 @@ undefined
 
 ## Closures
 
+- in js, if you use the function keyword inside another function, you are creating a closure
+- the local variables in the inner function can remain accessible after returning from the outer function
+- a special kind of object that combines two things: a function, and the environment in which that function was created
+- environment consists of any local variables that were in-scope at the time that the closure was created.
+```javascript
+function greet(name){
+    var text = 'Hello ' + name; // local variable
+    return function(){ console.log(text); }
+}
 
+var printGreeting = greet("pocket gophers");
 
+console.log(printGreeting.toString());
+printGreeting();
+```
+
+Closure as function factory
+
+- you can initialize your closure with state
+
+```javascript
+function messageAfter(seconds) {
+  return function(thingToMessage) {
+    return 'Waited ' + seconds + ' seconds to say: ' + thingToMessage;
+  };
+}
+
+var messageAfter5Seconds = messageAfter(5);
+var messageAfter2Seconds = messageAfter(2);
+
+messageAfter5Seconds("pocket gophers));
+messageAfter2Seconds("pocket gophers));
+
+messageAfter5Seconds(5)("pocket gophers");
+messageAfter2Seconds(2)("pocket gophers");
+```
 
 ## Resources
 
 - [IIFEs](http://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
 - [modules, module loaders, ES6 built in modules](]https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules)
-
-If you need a hint for the last release of miniQuery
-- [??????](http://blog.buymeasoda.com/creating-a-jquery-like-chaining-api/)
+- [MDN on closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
