@@ -1,11 +1,12 @@
-# iifes_modules_closures
+# IIFEs, Modules, Closures
 
-- IIFEs and modules are the syntactical gymnastics we have to go through to get usefull OO stuff in JS
+IIFEs and modules are the syntactical gymnastics we have to go through to get usefull OO stuff in JS
   - private state, 
   - encapsulation (global state is bad.  why???)
   - namespacing
 
 ### Pertinent JS recap
+
 - js only has function scope
 - in js, functions are first order objects
   - functions can be passed as params
@@ -68,7 +69,7 @@ console.log(something);
 ```javascript
 (function ($, window, document, undefined) {
   // ...
-})(jQuery, window, document, undefined);
+})(jQuery, window, document);
 ```
 
 - Defensive semicolon
