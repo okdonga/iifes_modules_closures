@@ -1,27 +1,27 @@
 # IIFEs, Modules, Closures
 
-These are the syntactical gymnastics we have to go through to get useful OO stuff in JS
+These are the syntactical gymnastics we have to go through to get useful OO stuff in js:
   - private state
   - public API
   - encapsulation (global state is bad.  why???)
   - namespacing
 
-## Pertinent JS recap
+## Pertinent js recap
 
 - js only has function scope
-- in js, functions are first order objects
+- In js, functions are first order objects
   - functions can be passed as params
   - functions can be returned as the result of expressions
   - variables can hold functions
-- functions are invoked with `()`
-- anything wrapped in `()` becomes an expression
+- Functions are invoked with `()`
+- Anything wrapped in `()` becomes an expression
 
 ### Function declaration and invocation
 
 ```javascript
 // function declaration
 function someName() { 
-  //
+  // ...
 }
 ```
 
@@ -29,7 +29,7 @@ function someName() {
 // function expression
 // (defines an anonymous function and assigns it to a var)
 var someName = (function() {
-  //...
+  // ...
 });
 ```
 
@@ -48,12 +48,12 @@ This is an IIFE
 })();
 ```
 
-- anonymous function expression
-- the parens around the declaration turn it into an expression
-- immediately invoked
-- avoids polluting global scope
-- allows us to hide private state
-- avoids variable hoisting
+- An Anonymous function expression
+- The parens around the declaration turn it into an expression
+- Immediately invoked
+- Avoids polluting global scope
+- Allows us to hide private state
+- Avoids variable hoisting
 
 ```javascript
 var something = "external stuff";
@@ -67,10 +67,10 @@ console.log(something);
 
 ## Closures
 
-- in js, if you use the function keyword inside another function, you are creating a closure
-- the local variables in the inner function can remain accessible after returning from the outer function
-- a special kind of object that combines two things: a function, and the environment in which that function was created
-- environment consists of any local variables that were in-scope at the time that the closure was created.
+- In js, if we use the function keyword inside another function, we are creating a closure
+- The local variables in the inner function can remain accessible after returning from the outer function
+- A closure is a special kind of object that combines two things: a function, and the environment in which that function was created
+- Environment consists of any local variables that were in-scope at the time that the closure was created
 
 ```javascript
 function greet(name){
@@ -84,10 +84,10 @@ console.log(printGreeting.toString());
 printGreeting();
 ```
 
-Closure as function factory
+#### Closure as function factory
 
-- you can initialize your closure with state
-- closure with its own state is created for each function invocation
+- We can initialize a closure with state
+- A closure with its own state is created for each function invocation
 
 ```javascript
 function messageAfter(seconds) {
@@ -110,7 +110,9 @@ messageAfter(453764576)("pocket gophers");
 ## JS Module Pattern
 
 - We can use IIFEs and closures as building blocks for modules
-- In addition to hiding internal state, modules also allow us to expose a public API and provide namespacing
+- We can hide internal state
+- We can expose a public API
+- We can provide namespacing
 - This is a standard pattern for writing JS libraries
 
 ```javascript
