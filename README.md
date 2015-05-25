@@ -48,7 +48,7 @@ This is an IIFE
 })();
 ```
 
-- An Anonymous function expression
+- An anonymous function expression
 - The parens around the declaration turn it into an expression
 - The parents at the end cause it to be immediately invoked
 - Avoids polluting global scope
@@ -56,11 +56,11 @@ This is an IIFE
 - Avoids variable hoisting
 
 ```javascript
-var something = "external stuff";
 (function() {
   var something = "my internal stuff";
   //...
 })();
+
 // what will the following line log?
 console.log(something);
 ```
@@ -148,10 +148,10 @@ var mathy = (function() {
   }
 })();
 // ...
-> mathy.square(4);
-4
-> mathy.privateFunction
-undefined
+// > mathy.square(4);
+// 4
+// > mathy.privateFunction
+// undefined
 ```
 
 
