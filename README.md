@@ -64,37 +64,6 @@ var something = "external stuff";
 console.log(something);
 ```
 
-Bind variables to specific names within the IIFE.  Compare the two examples below:
-
-```javascript
-function something(important_stuff) { 
-  console.log(important_stuff); 
-}
-
-> var important_stuff = "rilly important";
-> important_stuff
-"rilly important"
-
-> something(important_stuff)
-"rilly important"
-
-> important_stuff = "lulz wut"
-something(important_stuff)
-> "lulz wut"
-```
-
-```javascript
-var important_stuff = "rilly important";
-var something = (function(important_stuff) {
-  var something = "my internal stuff";
-  //...
-})(important_stuff);
-
-
-// what will the following line log?
-console.log(something);
-```
-
 ## Closures
 
 - in js, if you use the function keyword inside another function, you are creating a closure
@@ -132,8 +101,8 @@ var messageAfter2Seconds = messageAfter(2);
 messageAfter5Seconds("pocket gophers));
 messageAfter2Seconds("pocket gophers));
 
-messageAfter5Seconds(5)("pocket gophers");
-messageAfter2Seconds(2)("pocket gophers");
+messageAfter(7)("pocket gophers");
+messageAfter(453764576)("pocket gophers");
 ```
 
 This can be very performant with a large data set
