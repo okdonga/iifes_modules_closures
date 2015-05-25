@@ -106,7 +106,6 @@ add();
 
 - We can initialize a closure with state
 - A closure with its own state is created for each function invocation
-- This is called currying
 
 ```javascript
 function messageAfter(seconds) {
