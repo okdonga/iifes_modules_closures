@@ -159,4 +159,4 @@ undefined
 - [MDN on closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [Currying and closures in JS](http://engineering.cerner.com/blog/closures-and-currying-in-javascript/)
 
-- [modules, module loaders, ES6 built in modules](]https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules)
+- [Modules, module loaders, ES6 built in modules](https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules)
