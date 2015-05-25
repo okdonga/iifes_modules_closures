@@ -50,7 +50,7 @@ This is an IIFE
 
 - An anonymous function expression
 - The parens around the declaration turn it into an expression
-- The parents at the end cause it to be immediately invoked
+- The parens at the end cause it to be immediately invoked
 - Avoids polluting global scope
 - Allows us to hide private state
 - Avoids variable hoisting
@@ -147,7 +147,7 @@ var mathy = (function() {
   
   var square = (function(n) {
     console.log("square");
-    privateFunction();
+    secretFunctionTime();
     console.log("square out");
     return n*n;
   });
@@ -156,7 +156,7 @@ var mathy = (function() {
     return Math.log(n);
   });
   
-  var privateFunction = (function() {
+  var secretFunctionTime = (function() {
     console.log(topSecret + ", can't call this from outside");
   });
   
@@ -169,7 +169,7 @@ var mathy = (function() {
 // ...
 // > mathy.square(4);
 // 16
-// > mathy.privateFunction
+// > mathy.secretFunctionTime
 // undefined
 // > mathy.topSecret
 // undefined
