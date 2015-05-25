@@ -149,8 +149,10 @@ var mathy = (function() {
 })();
 // ...
 // > mathy.square(4);
-// 4
+// 16
 // > mathy.privateFunction
+// undefined
+// > mathy.topSecret
 // undefined
 ```
 
