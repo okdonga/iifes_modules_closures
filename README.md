@@ -50,7 +50,7 @@ This is an IIFE
 
 - An Anonymous function expression
 - The parens around the declaration turn it into an expression
-- Immediately invoked
+- The parents at the end cause it to be immediately invoked
 - Avoids polluting global scope
 - Allows us to hide private state
 - Avoids variable hoisting
