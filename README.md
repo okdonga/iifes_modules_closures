@@ -65,6 +65,55 @@ This is an IIFE
 console.log(something);
 ```
 
+## JS Module Pattern
+
+- We can use IIFEs as building blocks for modules
+- We can hide internal state
+- We can expose a public API
+- We can provide namespacing
+- This is a standard pattern for writing JS libraries
+
+```javascript
+
+// mathy.js
+var mathy = (function() {
+  
+  var topSecret = "shhhhhh";
+  
+  var factorial = (function(n) { 
+    return Math.factorial(n);
+  });
+  
+  var square = (function(n) {
+    console.log("square");
+    secretFunctionTime();
+    console.log("square out");
+    return n*n;
+  });
+  
+  var log = (function(n) {
+    return Math.log(n);
+  });
+  
+  var secretFunctionTime = (function() {
+    console.log(topSecret + ", can't call this from outside");
+  });
+  
+  return {
+    factorial: factorial,
+    square: square,
+    log: log
+  }
+})();
+// ...
+// > mathy.square(4);
+// 16
+// > mathy.secretFunctionTime
+// undefined
+// > mathy.topSecret
+// undefined
+```
+
 ## Closures
 
 - In js, if we use the function keyword inside another function, we are creating a closure
@@ -117,69 +166,17 @@ function messageAfter(seconds) {
 var messageAfter5Seconds = messageAfter(5);
 var messageAfter2Seconds = messageAfter(2);
 
-messageAfter5Seconds("pocket gophers");
-messageAfter2Seconds("pocket gophers");
+messageAfter5Seconds("fiery skippers");
+messageAfter2Seconds("fiery skippers");
 
-messageAfter(7)("pocket gophers");
-messageAfter(453764576)("pocket gophers");
-```
-
-
-## JS Module Pattern
-
-- We can use IIFEs and closures as building blocks for modules
-- We can hide internal state
-- We can expose a public API
-- We can provide namespacing
-- This is a standard pattern for writing JS libraries
-
-```javascript
-
-// mathy.js
-var mathy = (function() {
-  
-  var topSecret = "shhhhhh";
-  
-  var factorial = (function(n) { 
-    return Math.factorial(n);
-  });
-  
-  var square = (function(n) {
-    console.log("square");
-    secretFunctionTime();
-    console.log("square out");
-    return n*n;
-  });
-  
-  var log = (function(n) {
-    return Math.log(n);
-  });
-  
-  var secretFunctionTime = (function() {
-    console.log(topSecret + ", can't call this from outside");
-  });
-  
-  return {
-    factorial: factorial,
-    square: square,
-    log: log
-  }
-})();
-// ...
-// > mathy.square(4);
-// 16
-// > mathy.secretFunctionTime
-// undefined
-// > mathy.topSecret
-// undefined
+messageAfter(7)("fiery skippers");
+messageAfter(453764576)("fiery skippers");
 ```
 
 
 ## Resources
 
 - [IIFEs](http://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
-
 - [MDN on closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [Currying and closures in JS](http://engineering.cerner.com/blog/closures-and-currying-in-javascript/)
-
 - [Modules, module loaders, ES6 built in modules](https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules)
