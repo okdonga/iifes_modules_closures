@@ -11,7 +11,7 @@ These are the syntactical gymnastics we have to go through to get useful OO stuf
 - js only has function scope
 - In js, functions are first order objects
   - functions can be passed as params
-  - functions can be returned as the result of expressions
+  - functions can be returned as the result of other functions
   - variables can hold functions
 - Functions are invoked with `()`
 - Anything wrapped in `()` becomes an expression
