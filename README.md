@@ -15,7 +15,6 @@ These are the syntactical gymnastics we have to go through to get useful OO stuf
   - variables can hold functions
 - Functions are invoked with `()`
 - Anything wrapped in `()` becomes an expression
-- This is going to be built in to ES6 as an [Arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 ### Function declaration and invocation
 
@@ -55,6 +54,7 @@ This is an IIFE
 - Avoids polluting global scope
 - Allows us to hide private state
 - Avoids variable hoisting
+- This is going to be built in to ES6 as an [Arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 ```javascript
 (function() {
