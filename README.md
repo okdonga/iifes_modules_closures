@@ -75,7 +75,6 @@ console.log(something);
 - This is a standard pattern for writing JS libraries
 
 ```javascript
-
 // mathy.js
 var mathy = (function() {
   
@@ -106,13 +105,14 @@ var mathy = (function() {
     log: log
   }
 })();
-// ...
-// > mathy.square(4);
-// 16
-// > mathy.secretFunctionTime
-// undefined
-// > mathy.topSecret
-// undefined
+
+// What will these log...?
+console.log(mathy.square(4));
+// ????
+console.log(mathy.secretFunctionTime)
+// ????
+console.log(mathy.topSecret)
+// ????
 ```
 
 ## Closures
