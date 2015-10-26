@@ -167,11 +167,11 @@ function messageAfter(seconds) {
 var messageAfter5Seconds = messageAfter(5);
 var messageAfter2Seconds = messageAfter(2);
 
-messageAfter5Seconds("dragonfliez 4eva");
-messageAfter2Seconds("dragonfliez 4eva");
+messageAfter5Seconds("mud turtlez 4eva");
+messageAfter2Seconds("mud turtlez 4eva");
 
-messageAfter(7)("dragonfliez 4eva");
-messageAfter(453764576)("dragonfliez 4eva");
+messageAfter(7)("mud turtlez 4eva");
+messageAfter(453764576)("mud turtlez 4eva");
 ```
 
 
